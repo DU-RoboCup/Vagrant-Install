@@ -20,10 +20,10 @@
     mv 'ctc-patches/boost file patches/noncopyable.hpp' ../include/boost-1_55/boost/noncopyable.hpp
     rm -rf ctc-patches/
     
-
+    echo "Downloading and installing LUA binaries"
     mkdir -p /home/vagrant/NAO/devtools/ctc-linux64-atom-2.1.4.13/dev-lang
     cd /home/vagrant/NAO/devtools/ctc-linux64-atom-2.1.4.13/dev-lang
-    wget --no-check-certificate https://www.googledrive.com/host/0B6Ir1mHZmrjhOVdBODVIQ2xuTE0/ -O lua-5.1.4-r4.tbz2 
+    wget --no-check-certificate https://raw.githubusercontent.com/DU-RoboCup/Vagrant-Install/master/lua-5.1.4-r4.tbz2 -O lua-5.1.4-r4.tbz2 
     
     echo "Done! Cleaning up.."
     
