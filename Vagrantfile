@@ -54,8 +54,8 @@ Vagrant.configure(2) do |config|
 
     
     cd /home/vagrant/NAO/
-    wget -nv --no-check-certificate https://www.googledrive.com/host/0B2nZJSCqTexAbVpjTGRBVkJRT3c/ -O setup.sh
-    wget -nv --no-check-certificate https://www.googledrive.com/host/0B2nZJSCqTexAYTlESnRUWXFBZU0/ -O finalize_install.sh
+    wget -nv --no-check-certificate https://raw.githubusercontent.com/DU-RoboCup/Vagrant-Install/master/setup.sh -O setup.sh
+    wget -nv --no-check-certificatehttps://raw.githubusercontent.com/DU-RoboCup/Vagrant-Install/master/finalize_install.sh -O finalize_install.sh
   
     sudo chown -R vagrant:vagrant /home/vagrant/
     sudo chmod -R u+rw /home/vagrant/
