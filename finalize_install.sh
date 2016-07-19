@@ -48,7 +48,7 @@
     
     rm /home/vagrant/NAO/finalize_install.sh
     
-    read -p "\nDo you want to configure VIM now? " REPLY
+    read -p "\nDo you want to configure VIM now? (y/N)" REPLY
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         echo "Setting up an awesome VIM configuration"
