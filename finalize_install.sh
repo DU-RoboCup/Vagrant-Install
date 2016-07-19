@@ -49,8 +49,8 @@
     rm /home/vagrant/NAO/finalize_install.sh
     
     read -p "\nDo you want to configure VIM now? (y/N)" REPLY
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
+    case "$REPLY" in
+        y|Y ) {
         echo "Setting up an awesome VIM configuration"
         git clone https://github.com/amix/vimrc.git ~/.vim_runtime
         ./home/vagrant/.vim_runtime/install_awesome_vimrc.sh 
@@ -65,7 +65,9 @@
         wget https://raw.githubusercontent.com/JDevlieghere/dotfiles/master/.vim/.ycm_extra_conf.py -O .ycm_extra_conf.py
         cd ~/.vim_runtime/
         sh install_awesome_vimrc.sh
-    fi
+    };;
+        * ) echo "Vim is basic. Like your mother.";;
+    esac
     
     
     
