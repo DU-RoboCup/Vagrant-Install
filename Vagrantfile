@@ -46,7 +46,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get update && sudo apt-get upgrade
     
     echo "\nDone! Installing dependencies for the build system. This may take a couple minutes..." 
-    sudo apt-get install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim-nox doxygen python2.7-dev python3-dev
+    sudo apt-get install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev
     clear && echo "\nDone! Setting up build environment..."
     mkdir NAO
     mkdir -p NAO/{devtools,NAOSDKs}
