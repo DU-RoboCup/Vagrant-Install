@@ -34,7 +34,8 @@
     echo "Done..."
         
     echo "\n Downloading and installing the cross compiler..."
-    mkdir -p /var/persistent
+    sudo mkdir -p /var/persistent
+    sudo chown vagrant:vagrant /var/persistent
     cd /var/persistent/
     git clone https://github.com/DU-RoboCup/cross-compiler.git
     mv /var/persistent/cross-compiler/cross-atom .
