@@ -34,6 +34,7 @@
     echo "Done..."
         
     echo "\n Downloading and installing the cross compiler..."
+    mkdir -p /var/persistent
     cd /var/persistent/
     git clone https://github.com/DU-RoboCup/cross-compiler.git
     mv /var/persistent/cross-compiler/cross-atom .
@@ -46,7 +47,7 @@
     
     rm /home/vagrant/NAO/finalize_install.sh
     
-    read -p "\nDo you want to configure VIM now?" -n 1 -r
+    read -p "\nDo you want to configure VIM now?" -r
     echo    # (optional) move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
