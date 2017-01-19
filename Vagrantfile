@@ -42,26 +42,28 @@ Vagrant.configure(2) do |config|
   
   # Enable provisioning with a shell script. Additional provisioners such as
   config.vm.provision "shell", inline: <<-SHELL
-    echo "updating..." 
+    echo "Updating files..." 
     sudo apt-get update && sudo apt-get upgrade
     
     echo "\nDone! Installing dependencies for the build system. This may take a couple minutes..." 
     sudo apt-get install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev
     clear && echo "\nDone! Setting up build environment..."
-    mkdir NAO
+    mkdir -p NAO
     mkdir -p NAO/{devtools,NAOSDKs}
-    echo "Done! Updating permissions" 
+    echo "Done! Updating permissions and downloading setup files..."
+    echo 
 
-    
     cd /home/vagrant/NAO/
     wget -nv --no-check-certificate https://raw.githubusercontent.com/DU-RoboCup/Vagrant-Install/master/setup.sh -O setup.sh
     wget -nv --no-check-certificate https://raw.githubusercontent.com/DU-RoboCup/Vagrant-Install/master/finalize_install.sh -O finalize_install.sh
   
     sudo chown -R vagrant:vagrant /home/vagrant/
     sudo chmod -R u+rw /home/vagrant/
+    sudo chmod +x /home/vagrant/setup.sh
+    sudo chmod +x /home/vagrant/finalize_install.sh
  
-    echo "Vagrant Setup complete. To setup the build environment follow the online instructions"
- 
+    echo "Vagrant Setup complete. To setup the build environment follow the online instructions!"
+    echo
      
   SHELL
 

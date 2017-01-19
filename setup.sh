@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/NAO
+cd /home/vagrant/NAO
 chmod +x get_sdks.sh
 
 if [ -e /home/vagrant/NAO/get_sdks.sh ]; then 
