@@ -59,8 +59,8 @@ Vagrant.configure(2) do |config|
   
     sudo chown -R vagrant:vagrant /home/vagrant/
     sudo chmod -R u+rw /home/vagrant/
-    sudo chmod +x /home/vagrant/setup.sh
-    sudo chmod +x /home/vagrant/finalize_install.sh
+    sudo chmod +x /home/vagrant/NAO/setup.sh
+    sudo chmod +x /home/vagrant/NAO/finalize_install.sh
  
     echo "Vagrant Setup complete. To setup the build environment follow the online instructions!"
     echo
