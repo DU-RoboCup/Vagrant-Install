@@ -25,7 +25,7 @@ fi
 
 # Now, extract the zip and tar.gz files (CTC and SDK) to /home/vagrant/NAO/devtools
 printf "Extracting the CTC and SDK... \n"
-mkdir -p "/home/vagrant/NAO/devtools/
+mkdir -p "/home/vagrant/NAO/devtools/"
 tar -zxf naoqi-sdk-2.1.4.13-linux64.tar.gz -C /home/vagrant/NAO/devtools/
 unzip -o /home/vagrant/NAO/NAOSDKs/ctc-linux64-atom-2.1.4.13.zip -d /home/vagrant/NAO/devtools/ > /dev/null 2>&1
 rm -f ctc-linux64-atom-2.1.4.13.zip
