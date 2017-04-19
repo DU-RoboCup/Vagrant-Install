@@ -5,7 +5,7 @@ printf "Welcome to the DU Robocup on-guest provision. This may take a while... (
 
 # First, update and upgrade
 printf "Updating System... \n"
-sudo apt-get -qq update && sudo apt-get -qq upgrade --y
+sudo apt-get -qq update && sudo apt-get -qq upgrade -y
 
 # Next, install the build dependencies
 printf "Installing Dependencies... \n"
@@ -28,8 +28,8 @@ printf "Extracting the CTC and SDK... \n"
 mkdir -p "/home/vagrant/NAO/devtools/"
 tar -zxf naoqi-sdk-2.1.4.13-linux64.tar.gz -C /home/vagrant/NAO/devtools/
 unzip -o /home/vagrant/NAO/NAOSDKs/ctc-linux64-atom-2.1.4.13.zip -d /home/vagrant/NAO/devtools/ > /dev/null 2>&1
-rm -f ctc-linux64-atom-2.1.4.13.zip
-rm -f naoqi-sdk-2.1.4.13-linux64.tar.gz
+#rm -f ctc-linux64-atom-2.1.4.13.zip
+#rm -f naoqi-sdk-2.1.4.13-linux64.tar.gz
 printf "Done! \n"
 
 # Configure Git
@@ -70,7 +70,10 @@ qitoolchain create linux64 /home/vagrant/NAO/devtools/ctc-linux64-atom-2.1.4.13/
 qibuild add-config linux64 --toolchain linux64
 qibuild configure -c linux64
 # Something needs to go here with the qibuild config (wizard)
+cd /home/vagrant/NAO
 printf "Done! \n"
+
+
 
 # Check for VIM install
 if [ "$4" == "true" ]; then
