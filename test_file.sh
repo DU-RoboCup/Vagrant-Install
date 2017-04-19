@@ -45,7 +45,7 @@ printf "Installing main repository... \n"
 git clone https://github.com/DU-RoboCup/NAO-engine.git > /dev/null 2>&1
 
 # Install the cross-compiler
-printf "Done! Installing GCC5.2 Cross-Compiler... \n"
+printf "Done! Installing GCC 5.2 Cross-Compiler... \n"
 sudo mkdir -p /var/persistent
 sudo chown vagrant:vagrant /var/persistent
 cd /var/persistent/
