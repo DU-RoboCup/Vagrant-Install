@@ -43,7 +43,7 @@ printf "Done! \n"
 
 # Clone the main repository
 printf "Installing main repository... \n"
-git clone https://github.com/DU-RoboCup/NAO-engine.git #> /dev/null 2>&1
+git clone https://github.com/DU-RoboCup/NAO-engine.git > /dev/null 2>&1
 
 # Install the cross-compiler
 printf "Done! Installing GCC 5.2 Cross-Compiler... \n"
