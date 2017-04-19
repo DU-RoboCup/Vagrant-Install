@@ -91,7 +91,7 @@ if [ "$4" == "true" ]; then
   sh install_awesome_vimrc.sh
 fi
 
-prinf "Done setting up the environment! It's ready to use! \n"
+printf "Done setting up the environment! It's ready to use! \n"
 
 
 
