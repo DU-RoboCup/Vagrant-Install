@@ -84,7 +84,7 @@ Vagrant.configure(2) do |config|
         vb.name = "RobocupDevEnv"
     end
     config.vm.provision "shell" do |s|
-        s.path = "https://raw.githubusercontent.com/DU-RoboCup/vagrant-install/4bacce6/vagrant_install.sh"
+        s.path = "https://raw.githubusercontent.com/DU-RoboCup/vagrant-install/d644166/vagrant_install.sh"
         s.args = ["#{$git_username}","#{$git_email}", "#{$do_download}", "#{$do_vim}"]
     end
     config.vm.synced_folder "NAO/", "/home/vagrant/NAO", create:true
