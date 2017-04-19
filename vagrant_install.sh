@@ -76,7 +76,7 @@ printf "Done! \n"
 # Check for VIM install
 if [ "$4" == "true" ]; then
   printf "Setting up an awesome VIM configuration. This takes forever FYI... \n"
-  git clone https://github.com/amix/vimrc.git ~/.vim_runtime > /dev/null 2>&1
+  git clone https://github.com/amix/vimrc.git /home/vagrant/.vim_runtime > /dev/null 2>&1
   sh /home/vagrant/.vim_runtime/install_awesome_vimrc.sh 
   cd /home/vagrant/.vim_runtime
   git clone https://github.com/Valloric/YouCompleteMe.git sources_non_forked/YouCompleteMe > /dev/null 2>&1
