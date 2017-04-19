@@ -5,8 +5,8 @@ printf "Welcome to the DU Robocup on-guest provision. This may take a while... (
 
 # First, update and upgrade
 printf "Updating System... \n"
-sudo apt-get -qq update > /dev/null
-sudo apt-get -qq upgrade -y > /dev/null
+sudo apt-get -qq update > /dev/null 2>&1
+sudo apt-get -qq upgrade -y > /dev/null 2>&1
 
 # Next, install the build dependencies
 printf "Installing Dependencies... \n"
