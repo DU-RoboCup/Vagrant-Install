@@ -35,8 +35,8 @@ printf "Done! \n"
 
 # Configure Git
 printf "Configuring git... \n"
-git config --global user.email "$1"
-git config --global user.name "$2"
+git config --global user.email "$2"
+git config --global user.name "$1"
 git config --global core.editor "vim"
 git config --global credential.helper 'cache --timeout 900'
 printf "Done! \n"
