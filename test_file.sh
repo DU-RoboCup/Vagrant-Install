@@ -28,7 +28,7 @@ fi
 printf "Extracting the CTC and SDK... \n"
 mkdir -p "/home/vagrant/NAO/devtools/"
 tar -zxf naoqi-sdk-2.1.4.13-linux64.tar.gz -C /home/vagrant/NAO/devtools/
-unzip -o /home/vagrant/NAO/NAOSDKs/ctc-linux64-atom-2.1.4.13.zip -d /home/vagrant/NAO/devtools/ > /dev/null 2>&1
+unzip -o /home/vagrant/NAO/ctc-linux64-atom-2.1.4.13.zip -d /home/vagrant/NAO/devtools/ > /dev/null 2>&1
 #rm -f ctc-linux64-atom-2.1.4.13.zip
 #rm -f naoqi-sdk-2.1.4.13-linux64.tar.gz
 printf "Done! \n"
@@ -43,7 +43,7 @@ printf "Done! \n"
 
 # Clone the main repository
 printf "Installing main repository... \n"
-git clone https://github.com/DU-RoboCup/NAO-engine.git > /dev/null 2>&1
+git clone https://github.com/DU-RoboCup/NAO-engine.git #> /dev/null 2>&1
 
 # Install the cross-compiler
 printf "Done! Installing GCC 5.2 Cross-Compiler... \n"
