@@ -11,7 +11,7 @@ sudo apt-get -qq upgrade -y > /dev/null 2>&1
 
 # Next, install the build dependencies
 printf "Installing Dependencies... \n"
-sudo apt-get -qq install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev ntp
+sudo apt-get -qq install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev ntp > /dev/null 2>&1
 printf "Done! \n"
 
 # Change to the NAO directory
