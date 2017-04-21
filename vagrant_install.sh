@@ -22,6 +22,7 @@ if [ "$3" == "true" ]; then
   printf "Downloading the CTC and SDK. Hang tight! \n"
   sudo -u vagrant wget -nv --no-check-certificate https://cdn.iridescent.io/index.php/s/x2KjfposQRdU2U5/download -O files.zip
   sudo -u vagrant unzip -P "$5" files.zip
+  rm -f files.zip
 fi 
  
 # Now, extract the zip and tar.gz files (CTC and SDK) to /home/vagrant/NAO/devtools
