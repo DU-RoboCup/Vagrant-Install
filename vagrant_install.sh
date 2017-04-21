@@ -5,12 +5,13 @@ printf "Welcome to the DU Robocup on-guest provision. This may take a while... (
 
 # First, update and upgrade
 printf "Updating System... \n"
+sudo add-apt-repository ppa:jonathonf/vim -y > /dev/null 2>&1
 sudo apt-get -qq update > /dev/null 2>&1
 sudo apt-get -qq upgrade -y > /dev/null 2>&1
 
 # Next, install the build dependencies
 printf "Installing Dependencies... \n"
-sudo apt-get -qq install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev ntp
+sudo apt-get -qq install -y build-essential cmake python-pip git gcc-multilib libc6-dev libc6-i386 xinit qtcreator zip lua5.1 liblua5.1-dev wget vim vim-nox doxygen python2.7-dev python3-dev libboost1.55-all-dev ntp
 printf "Done! \n"
 
 # Change to the NAO directory
@@ -85,6 +86,7 @@ printf "Done! \n"
 if [ "$4" == "true" ]; then
   printf "Setting up an awesome VIM configuration. This takes forever FYI... \n"
   sudo -u vagrant git clone https://github.com/amix/vimrc.git /home/vagrant/.vim_runtime > /dev/null 2>&1
+  sed -ie 's/~/\/home\/vagrant/g' /home/vagrant/.vim_runtime/install_awesome_vimrc.sh
   sudo -u vagrant sh /home/vagrant/.vim_runtime/install_awesome_vimrc.sh 
   cd /home/vagrant/.vim_runtime
   sudo -u vagrant git clone https://github.com/Valloric/YouCompleteMe.git sources_non_forked/YouCompleteMe > /dev/null 2>&1
