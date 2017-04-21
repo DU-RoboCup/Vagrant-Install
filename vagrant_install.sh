@@ -29,8 +29,8 @@ printf "Extracting the CTC and SDK... \n"
 sudo -u vagrant mkdir -p "/home/vagrant/NAO/devtools/"
 sudo -u vagrant tar -zxf naoqi-sdk-2.1.4.13-linux64.tar.gz -C /home/vagrant/NAO/devtools/
 sudo -u vagrant unzip -o /home/vagrant/NAO/ctc-linux64-atom-2.1.4.13.zip -d /home/vagrant/NAO/devtools/ > /dev/null 2>&1
-#rm -f ctc-linux64-atom-2.1.4.13.zip
-#rm -f naoqi-sdk-2.1.4.13-linux64.tar.gz
+rm -f ctc-linux64-atom-2.1.4.13.zip
+rm -f naoqi-sdk-2.1.4.13-linux64.tar.gz
 printf "Done! \n"
 
 # Configure Git
