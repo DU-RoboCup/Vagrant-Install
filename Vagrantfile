@@ -27,7 +27,8 @@ if (Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/default/virtualbox/*")
     print "Ok! Great! Now are you a DU Robocup team member? [y/N] "
     confirm = STDIN.gets.chomp
     if confirm.eql? "y" or confirm.eql? "Y" then
-        print "Sweet! We're going to download the NAO CTC and SDK for you during installation! \n"
+        print "Sweet! We're going to download the NAO CTC and SDK for you during installation! What's the password? (GET THIS RIGHT ON THE FIRST TRY OR YOU'RE FUCKED) \n Password: "
+        $file_passwd = STDIN.gets.chomp
         $do_download = "true"
 
         unless File.directory?("NAO")
@@ -85,7 +86,7 @@ Vagrant.configure(2) do |config|
     end
     config.vm.provision "shell" do |s|
         s.path = "https://raw.githubusercontent.com/DU-RoboCup/vagrant-install/master/vagrant_install.sh"
-        s.args = ["#{$git_username}","#{$git_email}", "#{$do_download}", "#{$do_vim}"]
+        s.args = ["#{$git_username}","#{$git_email}", "#{$do_download}", "#{$do_vim}", "#{$file_passwd}"]
     end
     config.vm.synced_folder "NAO/", "/home/vagrant/NAO", create:true
 
