@@ -20,11 +20,10 @@ cd /home/vagrant/NAO
 # We need to download the CTC and the SDK if they're DU students (confirmed)
 if [ "$3" == "true" ]; then
   printf "Downloading the CTC and SDK. Hang tight! \n"
-  sudo -u vagrant wget -nv --no-check-certificate https://cdn.iridescent.io/index.php/s/TfnBuf9YgsXUxwk/download -O naoqi-sdk-2.1.4.13-linux64.tar.gz &
-  sudo -u vagrant wget -nv --no-check-certificate https://cdn.iridescent.io/index.php/s/8NPHXJmDCmnXoUM/download -O ctc-linux64-atom-2.1.4.13.zip &
-  wait %1 %2
-fi
-
+  sudo -u vagrant wget -nv --no-check-certificate https://cdn.iridescent.io/index.php/s/x2KjfposQRdU2U5/download -O files.zip
+  sudo -u vagrant unzip -P "$5" files.zip
+fi 
+ 
 # Now, extract the zip and tar.gz files (CTC and SDK) to /home/vagrant/NAO/devtools
 printf "Extracting the CTC and SDK... \n"
 sudo -u vagrant mkdir -p "/home/vagrant/NAO/devtools/"
