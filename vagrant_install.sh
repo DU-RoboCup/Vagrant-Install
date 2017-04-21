@@ -62,7 +62,7 @@ printf "Done! \n"
 
 # Install QIBuild for the HAL module
 printf "Installing QiBuild... \n"
-sudo -u vagrant pip install QiBuild -q
+sudo pip install QiBuild -q
 echo "PATH=\$PATH:\$HOME/.local/bin" >> /home/vagrant/.bashrc
 source /home/vagrant/.bashrc
 printf "Done! \n"
@@ -70,8 +70,12 @@ printf "Done! \n"
 # Install HAL toolchain
 printf "Installing the HAL toolchain... \n"
 cd /home/vagrant/NAO/NAO-engine/naoqi_modules/halagent
-sudo -u vagrant qitoolchain create linux64 /home/vagrant/NAO/devtools/ctc-linux64-atom-2.1.4.13/toolchain.xml
-sudo -u vagrant qibuild add-config linux64 --toolchain linux64
+qitoolchain create linux64 /home/vagrant/NAO/devtools/ctc-linux64-atom-2.1.4.13/toolchain.xml
+qibuild add-config linux64 --toolchain linux64
+sudo mkdir -p /home/vagrant/.config
+sudo rm -rf /home/vagrant/.config/qi
+sudo mv /root/.config/qi /home/vagrant/.config
+sudo chown -R vagrant:vagrant /home/vagrant/.config
 cd /home/vagrant/NAO
 printf "Done! \n"
 
