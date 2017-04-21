@@ -35,10 +35,14 @@ printf "Done! \n"
 
 # Configure Git
 printf "Configuring git... \n"
-sudo -u vagrant git config --global user.email "$2"
-sudo -u vagrant git config --global user.name "$1"
-sudo -u vagrant git config --global core.editor "vim"
-sudo -u vagrant git config --global credential.helper 'cache --timeout 900'
+printf "[user]\n" > /home/vagrant/.gitconfig
+printf "\tname = $1\n" >> /home/vagrant/.gitconfig
+printf "\temail = $2\n" >> /home/vagrant/.gitconfig
+printf "[core]\n" >> /home/vagrant/.gitconfig
+printf "\teditor = vim\n" >> /home/vagrant/.gitconfig
+printf "[credential]\n" >> /home/vagrant/.gitconfig
+printf "\thelper = cache --timeout 900\n" >> /home/vagrant/.gitconfig
+sudo chown vagrant:vagrant /home/vagrant/.gitconfig
 printf "Done! \n"
 
 # Clone the main repository
